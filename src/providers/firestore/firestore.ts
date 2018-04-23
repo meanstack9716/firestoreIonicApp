@@ -26,4 +26,8 @@ export class FirestoreProvider {
   getSongList(): AngularFirestoreCollection<Song> {
     return this.firestore.collection(`songList`);
   }
+
+  deleteSong(songId: string): Promise<void> {
+    return this.firestore.doc(`songList/${songId}`).delete();
+  }
 }
