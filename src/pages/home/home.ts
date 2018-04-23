@@ -25,4 +25,8 @@ export class HomePage {
     this.navCtrl.push('CreatePage');
   }
 
+  goToDetailPage(song: Song): void {
+    this.navCtrl.push('DetailPage', { song: song });
+  }
+
 }
