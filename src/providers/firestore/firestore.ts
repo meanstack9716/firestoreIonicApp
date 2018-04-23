@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Song } from '../../models/song.interface';
 
 @Injectable()
@@ -21,5 +21,9 @@ export class FirestoreProvider {
       songDescription,
       songName,
     });
+  }
+
+  getSongList(): AngularFirestoreCollection<Song> {
+    return this.firestore.collection(`songList`);
   }
 }
